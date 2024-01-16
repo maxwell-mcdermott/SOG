@@ -15,7 +15,7 @@ For more information, see the full documentation at https://igordot.github.io/sn
 For those looking for speed here is the demo for SnS which here would just be changed for sherbet
 module add git
 
-git clone --depth 1 https://github.com/maxwell-mcdermott/Sherbet
+git clone --depth 1 https://github.com/maxwell-mcdermott/Sherbet/sherbet
 
 sherbet/generate-settings mm10
 
