@@ -155,7 +155,6 @@ bowtie2 \
 --end-to-end  \
 --very-sensitive \
 --no-mixed --no-discordant  \
---soft-clipped-unmapped-tlen \
 -I 10 -X 700 \
 --dovetail \
 --threads $threads \
