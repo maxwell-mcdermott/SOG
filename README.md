@@ -17,11 +17,11 @@ module add git
 
 git clone --depth 1 https://github.com/maxwell-mcdermott/Sherbet
 
-sherbet/generate-settings mm10
+Sherbet/generate-settings mm10
 
-sherbet/gather-fastqs /gpfs/data/igorlab/tutorials/FASTQ-RNA
+Sherbet/gather-fastqs /gpfs/data/igorlab/tutorials/FASTQ-RNA
 
-sherbet/run cutnrun
+Sherbet/run cutnrun
 
 
 
