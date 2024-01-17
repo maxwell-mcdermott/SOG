@@ -176,7 +176,7 @@ seqDepthDouble=`samtools view -F 0x04 $projPath/alignment/sam/${histName}_bowtie
 seqDepth=$((seqDepthDouble/2))
 echo $seqDepth >$projPath/alignment/sam/bowtie2_summary/${histName}_bowtie2_spikeIn.seqDepth
 
-spikeInRef="/gpfs/data/feskelab/McDermott/Shared/ecoli/"
+spikeInRef="/gpfs/data/feskelab/McDermott/Shared/Ecoli_bowtie/"
 unfiltered_ecoli_sam="${logs_dir}/${sample}ecoli.unfiltered.sam"
 bowtie2_ecoli_txt="${logs_dir}/${sample}.ecoli.bowtie2.txt"
 flagstat_txt="${logs_dir}/${sample}ecoli.flagstat.txt"
