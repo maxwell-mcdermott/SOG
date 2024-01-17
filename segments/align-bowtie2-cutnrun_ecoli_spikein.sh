@@ -172,10 +172,6 @@ eval "$bash_cmd"
 #########################
 ## bowtie2-build path/to/Ecoli/fasta/Ecoli.fa /path/to/bowtie2Index/Ecoli
 
-seqDepthDouble=`samtools view -F 0x04 $projPath/alignment/sam/${histName}_bowtie2_spikeIn.sam | wc -l`
-seqDepth=$((seqDepthDouble/2))
-echo $seqDepth >$projPath/alignment/sam/bowtie2_summary/${histName}_bowtie2_spikeIn.seqDepth
-
 spikeInRef="/gpfs/data/feskelab/McDermott/Shared/Ecoli_bowtie/"
 unfiltered_ecoli_sam="${logs_dir}/${sample}ecoli.unfiltered.sam"
 bowtie2_ecoli_txt="${logs_dir}/${sample}.ecoli.bowtie2.txt"
