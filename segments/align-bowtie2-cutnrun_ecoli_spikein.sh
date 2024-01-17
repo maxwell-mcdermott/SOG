@@ -197,7 +197,10 @@ $fastq_param \
 echo "CMD: $bash_cmd"
 eval "$bash_cmd"
 
-
+spike_in_results="${logs_dir}/${sample}_bowtie2_spikeIn.seqDepth"
+seqDepthDouble=`samtools view -F 0x04 $unfiltered_ecoli_sam | wc -l`
+seqDepth=$((seqDepthDouble/2))
+echo $seqDepth > $spike_in_results
 
 
 
