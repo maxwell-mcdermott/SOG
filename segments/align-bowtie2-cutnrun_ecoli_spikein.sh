@@ -172,7 +172,7 @@ eval "$bash_cmd"
 #########################
 ## bowtie2-build path/to/Ecoli/fasta/Ecoli.fa /path/to/bowtie2Index/Ecoli
 
-spikeInRef="/gpfs/data/feskelab/McDermott/Shared/Ecoli_bowtie/"
+spikeInRef="/gpfs/data/feskelab/McDermott/Shared/ecoli/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/Bowtie2Index/genome"
 unfiltered_ecoli_sam="${logs_dir}/${sample}ecoli.unfiltered.sam"
 bowtie2_ecoli_txt="${logs_dir}/${sample}.ecoli.bowtie2.txt"
 flagstat_txt="${logs_dir}/${sample}ecoli.flagstat.txt"
