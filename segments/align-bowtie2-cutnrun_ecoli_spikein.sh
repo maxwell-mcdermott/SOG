@@ -183,7 +183,7 @@ bowtie2 \
 --very-sensitive \
 --no-mixed --no-discordant  \
 -I 10 -X 700 \
---dovetail \
+--no-overlap --no-dovetail \
 --threads $threads \
 -x $spikeInRef \
 $fastq_param \
