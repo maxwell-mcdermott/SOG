@@ -158,7 +158,7 @@ sub run_samples {
 
 	# request fewer threads per sample for larger projects (extra thread for overhead)
 	my $num_samples = @unique_samples;
-	my $threads = "9";
+	my $threads = "17";
 	if ($num_samples > 50) {
 		# deactivated due to causing memory issues in rare cases
 		# $threads = "5";
