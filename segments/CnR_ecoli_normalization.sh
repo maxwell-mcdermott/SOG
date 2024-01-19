@@ -93,7 +93,7 @@ echo " * deepTools: $(readlink -f $(which deeptools)) "
 echo " * samtools: $(readlink -f $(which samtools)) "
 echo " * bamCoverage: $(readlink -f $(which bamCoverage)) "
 echo " * bamCoverage version: $(bamCoverage --version 2>&1 | head -1) "
-echo " * BAM: $bam "
+echo " * BAM: $bam_dd_unsorted "
 echo " * BIGWIG: $seacr_bw "
 echo
 
