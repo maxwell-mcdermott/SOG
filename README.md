@@ -19,9 +19,9 @@ git clone --depth 1 https://github.com/maxwell-mcdermott/Sherbet
 
 Sherbet/generate-settings mm10
 
-Sherbet/gather-fastqs /gpfs/data/igorlab/tutorials/FASTQ-RNA
+Sherbet/gather-fastqs /gpfs/data/sequence/results/feskelab/XXXX-XX-XX/fastq/
 
-Sherbet/run cutnrun
+Sherbet/run cnr_with_spikein
 
 
 
