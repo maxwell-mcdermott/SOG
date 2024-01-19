@@ -43,7 +43,7 @@ module add default-environment
 module add bedtools/2.30.0
 module add samtools/1.9
 module add deeptools/3.5.1 
-module add ucscutils/374
+module add ucscutils/368
 module add r/4.1.1
 #not needed for checking only
 #########################
