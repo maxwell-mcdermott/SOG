@@ -21,6 +21,7 @@ Sherbet/generate-settings mm10
 Sherbet/gather-fastqs /gpfs/data/sequence/results/XXXX/XXXX-XX-XX/fastq/
 
 Sherbet/run cnr_with_spikein
+Sherbet/run cnr-spikein-pairs-peaks
 
 
 
