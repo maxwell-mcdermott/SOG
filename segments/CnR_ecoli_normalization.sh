@@ -22,6 +22,12 @@ threads=$3
 bam_dd_unsorted=$4
 
 #########################
+# settings and files
+
+summary_dir="${proj_dir}/summary"
+mkdir -p "$summary_dir"
+summary_csv="${summary_dir}/${sample}.${segment_name}.csv"
+samples_csv="${proj_dir}/samples.${segment_name}.csv"
 
 bam_dd_dir="${proj_dir}/BAM-DD"
 # bam_dd_unsorted="${bam_dd_dir}/${sample}.dd.bam"
@@ -99,6 +105,15 @@ echo
 
 #########################
 
+
+# skip if final bedgraph and bigwig exist
+if [ -s "$sample_bedgraph" ] && [ -s "${seacr_bw}.bai" ] ; then
+	echo -e "\n $script_name SKIP SAMPLE $sample \n" >&2
+	echo -e "\n $script_name ADD $sample TO $samples_csv \n" >&2
+	echo "${sample},${sample_bedgraph},${seacr_bw}" >> "$samples_csv"
+	exit 0
+fi
+
 samtools sort -n ${bam_dd_unsorted} --threads $threads  >  ${bam_dd_sorted}
 bedtools bamtobed -i ${bam_dd_sorted} -bedpe > ${bed_sample}
 awk '$1==$4 && $6-$2 < 500 {print $0}' ${bed_sample} > ${cleaned_bed}
@@ -140,6 +155,12 @@ echo "scaling factor used for 100000: $scale_factor"
 
 
 sleep 5
+
+# combine all sample summaries
+cat ${summary_dir}/*.${segment_name}.csv | LC_ALL=C sort -t ',' -k1,1 | uniq > "${proj_dir}/summary.${segment_name}.csv"
+
+# add sample and BAM to sample sheet
+echo "${sample},${sample_bedgraph},${seacr_bw}" >> "$samples_csv"
 
 #########################
 
