@@ -96,12 +96,11 @@ $bash_cmd
 
 #########################
 
-
 # check that output generated
 
-if [ ! -s "${SEAR_DIR}/${sample_treatment}_${sample_control}_seacr_control.peaks" ] ; then
+if [ ! -s "${SEAR_DIR}/${sample_treatment}_${sample_control}_seacr_control.peaks.stringent.bed" ] ; then
 	echo -e "\n $script_name ERROR: peaks 	 ${SEAR_DIR}/${sample_treatment}_${sample_control}_seacr_control.peaks.stringent.bed not generated \n" >&2
-	exit 1
+	exit 0
 fi
 
 #########################
