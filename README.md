@@ -14,17 +14,17 @@ For more information, see the full documentation at https://igordot.github.io/sn
 For those looking for speed here is the demo for SnS which here would just be changed for sherbet
 module add git
 
-git clone --depth 1 https://github.com/maxwell-mcdermott/Sherbet
+git clone --depth 1 https://github.com/maxwell-mcdermott/SOG
 
-Sherbet/generate-settings mm10
+SOG/generate-settings mm10
 
-Sherbet/gather-fastqs /gpfs/data/sequence/results/XXXX/XXXX-XX-XX/fastq/
+SOG/gather-fastqs /gpfs/data/sequence/results/XXXX/XXXX-XX-XX/fastq/
 
-Sherbet/run cnr_with_spikein
+SOG/run cnr_with_spikein
 
 Or
 
-Sherbet/run cnr-spikein-pairs-peaks
+SOG/run cnr-spikein-pairs-peaks
 
 
 
