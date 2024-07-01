@@ -26,5 +26,11 @@ Or
 
 SOG/run cnr-spikein-pairs-peaks
 
+Or
+
+SOG/run rna-star
+
+
+
 
 
