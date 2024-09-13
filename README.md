@@ -11,7 +11,7 @@ We build off those who come before us.
 All work is based off of the original SNS created by Igordot.  If someone somehow gets into this directory please cite him not me.  
 For more information, see the full documentation at https://igordot.github.io/sns
 
-For those looking for speed here is the demo for SnS which here would just be changed for sherbet
+For those looking for speed here is the demo for SnS which here would just be changed for SOG
 module add git
 
 git clone --depth 1 https://github.com/maxwell-mcdermott/SOG
