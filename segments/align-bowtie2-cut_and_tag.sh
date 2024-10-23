@@ -201,18 +201,6 @@ echo "READS MAPPED: $reads_mapped"
 reads_chrM=$(samtools view "$unfiltered_sam" | cut -f 3 | grep -c "chrM")
 echo "READS CHR M: $reads_chrM"
 
-
-
-seqDepthDouble=`samtools view -F 0x04 $unfiltered_ecoli_sam | wc -l`
-seqDepth=$((seqDepthDouble/2))
-echo "Ecoli reads: $seqDepth"
-echo $seqDepth >${logs_dir}/${sample}_bowtie2_spikeIn.seqDepth
-
-
-
-
-
-
 ##########
 # filter and sort BAM
 
