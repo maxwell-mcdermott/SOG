@@ -116,16 +116,14 @@ if [ -s "$sample_bedgraph" ] && [ -s "${seacr_bw}.bai" ] ; then
 	exit 0
 fi
 
+
 # downsample the deduplicated BAM file
-segment_align="align-bowtie2-cut_and_tag"
-seqDepth=$(grep -s -m 1 "^${sample}," "${proj_dir}/summary.${segment_align}.csv" | cut -d ',' -f 6)
+segment_align="bam-dedup-sambamba"
+seqDepth=$(grep -s -m 1 "^${sample}," "${proj_dir}/summary.${segment_align}.csv" | cut -d ',' -f 3)
 echo $seqDepth
 scale_factor=`echo "10000000 / $seqDepth " | bc -l`
 echo $scale_factor
-scale_factor=`echo "10000000 / $seqDepth " | bc -l`
-samtools view -s $scale_factor -b -p ${bam_dd_sorted} > ${bam_dd_10M_sorted} 
-
-
+samtools view -s ${scale_factor} -b -p ${bam_dd_sorted} > ${bam_dd_10M_sorted} 
 
 
 # samtools sort -n ${bam_dd_unsorted} --threads $threads  >  ${bam_dd_sorted}
