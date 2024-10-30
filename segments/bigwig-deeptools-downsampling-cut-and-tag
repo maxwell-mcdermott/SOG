@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # deepTools generate BigWig from BAM
 
 
