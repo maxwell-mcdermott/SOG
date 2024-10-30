@@ -201,6 +201,8 @@ echo "READS MAPPED: $reads_mapped"
 reads_chrM=$(samtools view "$unfiltered_sam" | cut -f 3 | grep -c "chrM")
 echo "READS CHR M: $reads_chrM"
 
+
+
 ##########
 # filter and sort BAM
 
