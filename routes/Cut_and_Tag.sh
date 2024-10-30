@@ -132,20 +132,20 @@ if [ -z "$bam_dd" ] ; then
 	exit 1
 fi
 
-# normalize for spike in and create bigwig (deeptools)
-CnR_ecoli_normalization="Down_sample_cut_and_tag_10M"
-bash_cmd="bash ${code_dir}/segments/${CnR_ecoli_normalization}.sh $proj_dir $sample 16 $bam_dd"
-sbatch_perf="--nodes=1 --ntasks=1 --cpus-per-task=17 --mem-per-cpu=8G"
+# generate BigWig (deeptools) for 10M downsample
+segment_bw_deeptools="Cut_and_Tag_bigwig_deeptools_downsample"
+bash_cmd="bash ${code_dir}/segments/${segment_bw_deeptools}.sh $proj_dir $sample 8 $bam_dd"
+sbatch_perf="--nodes=1 --ntasks=1 --cpus-per-task=5 --mem-per-cpu=12G"
 sbatch_mail="--mail-user=${USER}@nyulangone.org --mail-type=FAIL,REQUEUE"
-sbatch_name="--job-name=sns.${CnR_ecoli_normalization}.${sample}"
+sbatch_name="--job-name=sns.${segment_bw_deeptools}.${sample}"
 sbatch_cmd="sbatch --time=8:00:00 ${sbatch_name} ${sbatch_perf} ${sbatch_mail} --export=NONE --wrap='${bash_cmd}'"
 echo "CMD: $sbatch_cmd"
 (eval $sbatch_cmd)
 
 # generate BigWig (deeptools)
-segment_bw_deeptools="bigwig-deeptools"
-bash_cmd="bash ${code_dir}/segments/${segment_bw_deeptools}.sh $proj_dir $sample 4 $bam_dd"
-sbatch_perf="--nodes=1 --ntasks=1 --cpus-per-task=5 --mem-per-cpu=8G"
+segment_bw_deeptools="bigwig-deeptools-cut-and-tag"
+bash_cmd="bash ${code_dir}/segments/${segment_bw_deeptools}.sh $proj_dir $sample 8 $bam_dd"
+sbatch_perf="--nodes=1 --ntasks=1 --cpus-per-task=5 --mem-per-cpu=12G"
 sbatch_mail="--mail-user=${USER}@nyulangone.org --mail-type=FAIL,REQUEUE"
 sbatch_name="--job-name=sns.${segment_bw_deeptools}.${sample}"
 sbatch_cmd="sbatch --time=8:00:00 ${sbatch_name} ${sbatch_perf} ${sbatch_mail} --export=NONE --wrap='${bash_cmd}'"
