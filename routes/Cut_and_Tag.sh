@@ -133,7 +133,7 @@ if [ -z "$bam_dd" ] ; then
 fi
 
 # generate BigWig (deeptools) for 10M downsample
-segment_bw_deeptools="Cut_and_Tag_bigwig_deeptools_downsample"
+segment_bw_deeptools="bigwig-deeptools-downsampling-cut-and-tag"
 bash_cmd="bash ${code_dir}/segments/${segment_bw_deeptools}.sh $proj_dir $sample 8 $bam_dd"
 sbatch_perf="--nodes=1 --ntasks=1 --cpus-per-task=5 --mem-per-cpu=12G"
 sbatch_mail="--mail-user=${USER}@nyulangone.org --mail-type=FAIL,REQUEUE"
