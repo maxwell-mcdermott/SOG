@@ -188,7 +188,7 @@ cd "$macs_logs_dir" || exit 1
 bash_cmd="
 macs2 callpeak \
 --verbose 2 \
---bdg --SPMR \
+--bdg --SPMR -f BAMPE \
 --keep-dup all \
 $analysis_params \
 --gsize $macs_genome \
@@ -298,7 +298,7 @@ if [ ! -s "$macs_bdg_treat" ] ; then
 	exit 1
 fi
 
-module add ucscutils/374
+module add ucscutils/398
 
 if [ ! -s "$macs_bw" ] ; then
 
